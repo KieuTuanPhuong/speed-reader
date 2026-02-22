@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import * as React from "react";
-import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
-import { Spinner } from "@/components/ui/spinner";
-import { Textarea } from "@/components/ui/textarea";
+import * as React from 'react'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
+import { Slider } from '@/components/ui/slider'
+import { Spinner } from '@/components/ui/spinner'
+import { Textarea } from '@/components/ui/textarea'
 
 export default function DemoPage() {
-  const [sliderValue, setSliderValue] = React.useState([50]);
+  const [sliderValue, setSliderValue] = React.useState([50])
 
   return (
-    <div className="container mx-auto py-10 space-y-10">
+    <div className="container mx-auto space-y-10 py-10">
       <h1 className="text-3xl font-bold">Component Demo</h1>
 
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">Button</h2>
         <div className="flex flex-wrap gap-4">
-          <Button>Default</Button>
+          <Button className="liquid-glass-dark">Default</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="destructive">Destructive</Button>
           <Button variant="outline">Outline</Button>
@@ -39,7 +39,7 @@ export default function DemoPage() {
             value={sliderValue}
             onValueChange={setSliderValue}
           />
-          <p className="text-sm text-muted-foreground">Value: {sliderValue}</p>
+          <p className="text-muted-foreground text-sm">Value: {sliderValue}</p>
         </div>
       </section>
 
@@ -64,28 +64,28 @@ export default function DemoPage() {
           <Button
             variant="outline"
             onClick={() =>
-              toast("Event has been created", {
-                description: "Sunday, December 03, 2023 at 9:00 AM",
+              toast('Event has been created', {
+                description: 'Sunday, December 03, 2023 at 9:00 AM',
                 action: {
-                  label: "Undo",
-                  onClick: () => console.log("Undo"),
+                  label: 'Undo',
+                  onClick: () => console.log('Undo'),
                 },
               })
             }
           >
             Show Toast
           </Button>
-          <Button variant="outline" onClick={() => toast.success("Success!!")}>
+          <Button variant="outline" onClick={() => toast.success('Success!!')}>
             Success Toast
           </Button>
           <Button
             variant="outline"
-            onClick={() => toast.error("Error occurred")}
+            onClick={() => toast.error('Error occurred')}
           >
             Error Toast
           </Button>
         </div>
       </section>
     </div>
-  );
+  )
 }
